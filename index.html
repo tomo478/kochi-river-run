@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kochi River Run</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="stage" aria-label="高知の川下りゲーム">
+        <canvas id="game" width="1280" height="720" aria-label="高知の川下りゲーム"></canvas>
+        <div class="hud" aria-live="polite">
+          <div>
+            <span class="label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span class="label">Time</span>
+            <strong id="time">60</strong>
+          </div>
+          <div>
+            <span class="label">Naruko</span>
+            <strong id="charge">0%</strong>
+          </div>
+        </div>
+        <div class="title-card" id="message">
+          <h1>Kochi River Run</h1>
+          <p class="lead">四万十川をくだりながらカツオを集める、60秒のスコアアタックです。</p>
+          <ul class="rule-list">
+            <li>移動: 矢印キー / WASD</li>
+            <li>カツオ: 取るとスコアと鳴子ゲージが増えます</li>
+            <li>岩・渦: 当たると時間とスコアが減り、少し動きにくくなります</li>
+            <li>鳴子バースト: ゲージが100%で光ったら Space で障害物を一掃</li>
+          </ul>
+          <button id="startButton" type="button">スタート</button>
+        </div>
+      </section>
+      <footer class="controls">
+        <span>移動: 矢印キー / WASD</span>
+        <span>鳴子バースト: Space</span>
+        <span>リスタート: R</span>
+      </footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
