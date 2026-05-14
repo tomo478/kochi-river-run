@@ -15,5 +15,6 @@ assert.match(source, /state\.burstTimer = 0\.9;/, "naruko burst should use a lon
 assert.match(source, /drawFullScreenBurst/, "naruko burst should draw a full-screen visual effect");
 assert.match(source, /player:\s*loadSprite\("assets\/player-boat\.png"\)/, "player should use a generated sprite");
 assert.match(source, /drawSprite\(sprites\.player,\s*x,\s*y,\s*112,/, "player sprite should be rendered at a readable size");
+assert.match(source, /SCROLL_BLOCK_KEYS\.has\(event\.code\)/, "arrow keys and Space should prevent page scrolling while playing");
 
 console.log("static game checks passed");

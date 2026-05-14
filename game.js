@@ -20,6 +20,7 @@ const sprites = {
 };
 
 const keys = new Set();
+const SCROLL_BLOCK_KEYS = new Set(["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Space"]);
 const pointer = { active: false, x: W / 2, y: H * 0.72 };
 let lastFrame = performance.now();
 let bgReady = false;
@@ -547,9 +548,11 @@ function pointerToCanvas(event) {
 }
 
 window.addEventListener("keydown", (event) => {
+  if (SCROLL_BLOCK_KEYS.has(event.code)) {
+    event.preventDefault();
+  }
   keys.add(event.code);
   if (event.code === "Space") {
-    event.preventDefault();
     burst();
   }
   if (event.code === "KeyR") resetGame();
